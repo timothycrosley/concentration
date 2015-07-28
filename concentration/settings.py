@@ -19,9 +19,9 @@ END_TOKEN = "## END DISTRACTORS ##"
 SUB_DOMAINS = ('www', 'news')
 DISTRACTORS = ['ycombinator.com', 'slashdot.com', 'facebook.com', 'reddit.com', 'gawker.com', 'theverge.com',
                'techcrunch.com', 'thenextweb.com', 'wired.com', 'gizmodo.com', 'slickdeals.net',
-               'mashable.com', 'theverge.com', 'digitaltrends.com', 'techradar.com', 'twitter.com',
-               'technorati.com', 'digg.com', 'buzzfeed.com', 'twitter.com', 'youtube.com',
-               'iwastesomuchtime.com', 'pinterest.com', 'ebay.com', 'thepointsguy.com']
+               'mashable.com', 'digitaltrends.com', 'techradar.com', 'twitter.com', 'tumblr.com',
+               'technorati.com', 'digg.com', 'buzzfeed.com', 'twitter.com', 'youtube.com', 'netflix.com',
+               'iwastesomuchtime.com', 'pinterest.com', 'ebay.com', 'thepointsguy.com', 'imgur.com']
 
 for config_file_path in ('/etc/concentration.distractors', '~/.cocentration.distractors'):
     if os.path.isfile(config_file_path):

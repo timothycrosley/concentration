@@ -22,7 +22,7 @@ DISTRACTORS = ['ycombinator.com', 'slashdot.com', 'facebook.com', 'reddit.com', 
                'mashable.com', 'digitaltrends.com', 'techradar.com', 'twitter.com', 'tumblr.com',
                'technorati.com', 'digg.com', 'buzzfeed.com', 'twitter.com', 'youtube.com', 'netflix.com',
                'iwastesomuchtime.com', 'pinterest.com', 'ebay.com', 'thepointsguy.com', 'imgur.com', 'woot.com',
-               'flyertalk.com']
+               'flyertalk.com', 'instagram.com', 'medium.com', 'meetup.com']
 
 for config_file_path in ('/etc/concentration.distractors', '~/.cocentration.distractors'):
     if os.path.isfile(config_file_path):

@@ -24,7 +24,7 @@ DISTRACTORS = ['ycombinator.com', 'slashdot.com', 'facebook.com', 'reddit.com', 
                'iwastesomuchtime.com', 'pinterest.com', 'ebay.com', 'thepointsguy.com', 'imgur.com', 'woot.com',
                'flyertalk.com', 'instagram.com', 'medium.com', 'meetup.com']
 
-for config_file_path in ('/etc/concentration.distractors', '~/.cocentration.distractors'):
+for config_file_path in ('/etc/concentration.distractors', '~/.concentration.distractors'):
     if os.path.isfile(config_file_path):
         with open(config_file_path) as config_file:
             DISTRACTORS.extend(config_file.readlines())

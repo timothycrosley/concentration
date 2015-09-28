@@ -2,12 +2,8 @@
 
 Defines how the basic concentration settings get loaded.
 """
-from __future__ import absolute_import, division, print_function, unicode_literals
-
 import os
 import sys
-
-from .pie_slice import *
 
 LINUX = 0
 MAC = 1

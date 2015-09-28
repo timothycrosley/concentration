@@ -1,13 +1,10 @@
 #!/usr/bin/env python
-from __future__ import absolute_import, division, print_function, unicode_literals
-
 import codecs
 import subprocess
 import sys
 import time
 
 from . import settings
-from .pie_slice import *
 
 
 def error(message):

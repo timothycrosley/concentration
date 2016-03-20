@@ -3,14 +3,9 @@ import codecs
 import subprocess
 import sys
 import time
+import hug
 
 from . import settings
-
-
-def error(message):
-    """Prints an error message and then exits"""
-    print(message, file=sys.stderr)
-    sys.exit(1)
 
 
 def reset_network(message):
@@ -23,6 +18,7 @@ def reset_network(message):
     print(message)
 
 
+@hug.cli()
 def improve():
     """Disables access to websites that are defined as 'distractors'"""
     with open(settings.HOSTS_FILE, "r+") as hosts_file:
@@ -38,6 +34,7 @@ def improve():
     reset_network("Concentration is now improved :D!")
 
 
+@hug.cli()
 def lose():
     """Enables access to websites that are defined as 'distractors'"""
     changed = False
@@ -60,7 +57,8 @@ def lose():
     reset_network("Concentration is now lost :(.")
 
 
-def take_break(minutes=1):
+@hug.cli()
+def take_break(minutes: hug.types.number=1):
     """Enables temporarily breaking concentration"""
     lose()
     print("")
@@ -77,16 +75,7 @@ def take_break(minutes=1):
     improve()
 
 
+@hug.cli('64')
 def game():
     """Basic game implementation"""
     print(codecs.encode('Sbe Nznaqn, gur ybir bs zl yvsr', 'rot_13'))
-
-
-RUNNERS = {'improve': improve, 'lose': lose, 'break': take_break, '64': game}
-
-
-def console():
-    """The console command to enable concentration"""
-    if len(sys.argv) != 2 or sys.argv[1] not in RUNNERS.keys():
-        error("Usage: " + sys.argv[0] + " [improve|break|lose]")
-    RUNNERS[sys.argv[1]]()

@@ -51,7 +51,7 @@ setup(name='concentration',
       license="MIT",
       entry_points={
         'console_scripts': [
-            'concentration = concentration.run:console',
+            'concentration = concentration.run:__hug__.cli',
         ]
       },
       packages=['concentration'],

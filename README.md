@@ -21,7 +21,7 @@ To keep focused (blocking distracting sites):
 
     sudo concentration improve
 
-To take a small one minute timed break:
+To take a small 5 minute timed break:
 
     sudo concentration break
 
@@ -37,6 +37,10 @@ You can add more files to the blocked list by putting them in the following file
 - ~/.concentration.distractors
 - /etc/concentration.distractors
 
+
+You can make sure sites are visible even if concentration is enabled by putting them in the following files (new line delimited):
+- ~/.concentration.safe
+- /etc/concentration.safe
 
 --------------------------------------------
 

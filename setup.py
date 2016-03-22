@@ -48,7 +48,9 @@ setup(name='concentration',
       author='Timothy Crosley',
       author_email='timothy.crosley@gmail.com',
       url='https://github.com/timothycrosley/concentration',
-      license="MIT",
+      license='MIT',
+      requires=['hug'],
+      install_requires=['hug>=2.0.0'],
       entry_points={
         'console_scripts': [
             'concentration = concentration.run:__hug__.cli',

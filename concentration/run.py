@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 """concentration/run.py
 
-The core of concentration. Defines command line tools, how to enforce rules, and how to reset the network.
 """
 import codecs
 import subprocess
@@ -77,6 +76,12 @@ def take_break(minutes: hug.types.number=5):
     print("######################################### BREAK OVER :) ####################################")
     print("")
     improve()
+
+
+@hug.cli()
+def blocked():
+    """Returns the configured list of blocked sites"""
+    return settings.DISTRACTORS
 
 
 @hug.cli('64')

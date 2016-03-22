@@ -3,8 +3,10 @@ Concentration
 [![Join the chat at https://gitter.im/timothycrosley/concentration](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/timothycrosley/concentration?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Stay focused on work when you want, and goof off when you don't. Concentration is a simple
-console utility to block distracting sites when you need to focus, while allowing you to easily
+Python 3 console utility to block distracting sites when you need to focus, while allowing you to easily
 take timed breaks. Internally uses /etc/hosts file as the mechanism to block sites.
+
+[Concentration Example](https://raw.github.com/timothycrosley/concentration/develop/example.gif)
 
 
 Installing Concentration

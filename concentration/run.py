@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+"""concentration/run.py
+
+The core of concentration. Defines command line tools, how to enforce rules, and how to reset the network.
+"""
 import codecs
 import subprocess
 import sys
@@ -57,8 +61,8 @@ def lose():
     reset_network("Concentration is now lost :(.")
 
 
-@hug.cli()
-def take_break(minutes: hug.types.number=15):
+@hug.cli('break')
+def take_break(minutes: hug.types.number=5):
     """Enables temporarily breaking concentration"""
     lose()
     print("")

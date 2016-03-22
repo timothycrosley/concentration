@@ -30,7 +30,7 @@ for config_file_path in ('/etc/concentration.safe', os.path.expanduser('~/.conce
         with open(config_file_path) as config_file:
             DISTRACTORS.update(config_file.read().splitlines())
 
-DISTRACTORS.remove('')
+DISTRACTORS.discard('')
 
 PLATFORM = OS.linux
 for platform in (("linux", OS.linux), ("darwin", OS.mac), ("win32", OS.windows)):

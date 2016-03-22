@@ -6,7 +6,7 @@ Stay focused on work when you want, and goof off when you don't. Concentration i
 Python 3 console utility to block distracting sites when you need to focus, while allowing you to easily
 take timed breaks. Internally uses /etc/hosts file as the mechanism to block sites.
 
-[Concentration Example](https://raw.github.com/timothycrosley/concentration/develop/example.gif)
+![Concentration Example](https://raw.github.com/timothycrosley/concentration/develop/example.gif)
 
 
 Installing Concentration

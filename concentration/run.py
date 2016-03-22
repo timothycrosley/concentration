@@ -1,6 +1,7 @@
 #!/usr/bin/env python
-"""concentration/run.py
+"""Concentration
 
+A very simple command line application to maintain focus by blocking distracting sites.
 """
 import codecs
 import subprocess

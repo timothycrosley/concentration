@@ -42,7 +42,7 @@ except (IOError, ImportError, OSError, RuntimeError):
    readme = ''
 
 setup(name='concentration',
-      version='1.0.0',
+      version='1.0.1',
       description="Get work done when you need to, goof off when you don't.",
       long_description=readme,
       author='Timothy Crosley',

@@ -42,21 +42,21 @@ except (IOError, ImportError, OSError, RuntimeError):
    readme = ''
 
 setup(name='concentration',
-      version='0.0.3',
+      version='1.0.0',
       description="Get work done when you need to, goof off when you don't.",
       long_description=readme,
       author='Timothy Crosley',
       author_email='timothy.crosley@gmail.com',
       url='https://github.com/timothycrosley/concentration',
-      license="MIT",
+      license='MIT',
+      requires=['hug'],
+      install_requires=['hug>=2.0.0'],
       entry_points={
         'console_scripts': [
-            'concentration = concentration.run:console',
+            'concentration = concentration.run:__hug__.cli',
         ]
       },
       packages=['concentration'],
-      requires=[],
-      install_requires=[],
       cmdclass={'test': PyTest},
       keywords='Focus, Python, Python2, Python3, Firewall, Filter, Utility, Concentration',
       classifiers=['Development Status :: 6 - Mature',

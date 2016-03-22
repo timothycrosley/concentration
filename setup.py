@@ -57,8 +57,6 @@ setup(name='concentration',
         ]
       },
       packages=['concentration'],
-      requires=[],
-      install_requires=[],
       cmdclass={'test': PyTest},
       keywords='Focus, Python, Python2, Python3, Firewall, Filter, Utility, Concentration',
       classifiers=['Development Status :: 6 - Mature',

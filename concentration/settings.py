@@ -21,15 +21,17 @@ DISTRACTORS = {'ycombinator.com', 'slashdot.com', 'facebook.com', 'reddit.com', 
                'flyertalk.com', 'instagram.com', 'medium.com', 'meetup.com', 'distrowatch.com',
                'arstechnica.com', 'phoronix.com', 'arstechnica.com', 'failblog.com'}
 
-for config_file_path in ('/etc/concentration.distractors', '~/.concentration.distractors'):
+for config_file_path in ('/etc/concentration.distractors', os.path.expanduser('~/.concentration.distractors')):
     if os.path.isfile(config_file_path):
         with open(config_file_path) as config_file:
-            DISTRACTORS.update(config_file.readlines())
-for config_file_path in ('/etc/concentration.safe', '~/.concentration.safe'):
+            DISTRACTORS.update(config_file.read().splitlines())
+for config_file_path in ('/etc/concentration.safe', os.path.expanduser('~/.concentration.safe')):
     if os.path.isfile(config_file_path):
         with open(config_file_path) as config_file:
-            DISTRACTORS.update(config_file.readlines())
+            DISTRACTORS.update(config_file.read().splitlines())
+DISTRACTORS.remove('')
 
+import pdb;pdb.set_trace()
 PLATFORM = OS.linux
 for platform in (("linux", OS.linux), ("darwin", OS.mac), ("win32", OS.windows)):
     if platform[0] in sys.platform:

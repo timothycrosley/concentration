@@ -58,7 +58,7 @@ def lose():
 
 
 @hug.cli()
-def take_break(minutes: hug.types.number=1):
+def take_break(minutes: hug.types.number=15):
     """Enables temporarily breaking concentration"""
     lose()
     print("")

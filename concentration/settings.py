@@ -28,9 +28,7 @@ for config_file_path in ('/etc/concentration.distractors', os.path.expanduser('~
 for config_file_path in ('/etc/concentration.safe', os.path.expanduser('~/.concentration.safe')):
     if os.path.isfile(config_file_path):
         with open(config_file_path) as config_file:
-            # Convert the whitelist into a set of domains and then remove that
-            # set from DISTRACTORS
-            DISTRACTORS -= set(config_file.read().splitlines())
+            DISTRACTORS.difference_update(config_file.read().splitlines()) # Remove all white listed domains
 
 DISTRACTORS.discard('')
 

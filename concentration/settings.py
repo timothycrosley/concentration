@@ -19,7 +19,17 @@ DISTRACTORS = {'ycombinator.com', 'slashdot.com', 'facebook.com', 'reddit.com', 
                'technorati.com', 'digg.com', 'buzzfeed.com', 'twitter.com', 'youtube.com', 'netflix.com',
                'iwastesomuchtime.com', 'pinterest.com', 'ebay.com', 'thepointsguy.com', 'imgur.com', 'woot.com',
                'flyertalk.com', 'instagram.com', 'medium.com', 'meetup.com', 'distrowatch.com',
-               'arstechnica.com', 'phoronix.com', 'arstechnica.com', 'failblog.com'}
+               'arstechnica.com', 'phoronix.com', 'arstechnica.com', 'failblog.com', 'redfin.com', 'realtor.com',
+               'zillow.com', 'trulia.com', 'cnn.com', 'fox.com', 'realclearpolitics.com', 'yelp.com',
+               'opentable.com', 'slashdot.org', 'xkcd.com', 'cnet.com', 'tomshardware.com', 'engadget.com', 'zdnet.com',
+               'techrepublic.com', 'gizmag.com', 'anandtech.com', 'imore.com', 'gsmarena.com ', 'geek.com',
+               'firstpost.com', 'wearables.com', 'stripgenerator.com', 'fmylife.com', 'liveplasma.com', 'cracked.com',
+               'befunky.com', 'pcworld.com', 'typepad.com', 'pogo.com', 'omegle.com', 'lifehacker.com', 'answerbag.com',
+               'cheezburger.com', 'fark.com', 'popurls.com', 'sho.com', 'hulu.com', 'myparentsjoinedfacebook.com',
+               'homestarrunner.com', 'petsinclothes.com', 'freerice.com', 'everypoet.com', 'mono-1.com',
+               'mcsweeneys.net', 'postsecret.com', 'textsfromlastnight.com', 'awkwardfamilyphotos.com', 'myspace.com',
+               'lunchtimers.com', 'twitterfall.com', 'break.com', 'passiveaggressivenotes.com', 'sciencemag.org',
+               'bbc.com', 'notalwaysright.com'}
 
 for config_file_path in ('/etc/concentration.distractors', os.path.expanduser('~/.concentration.distractors')):
     if os.path.isfile(config_file_path):

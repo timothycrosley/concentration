@@ -9,6 +9,7 @@ Notable Bug Reporters
 Code Contributors
 ===================
 - Richard Killam (@rkillam)
+- Sietse Brouwer (https://bitbucket.org/sietsebb)
 
 Documenters
 ===================

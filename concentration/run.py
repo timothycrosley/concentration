@@ -67,16 +67,19 @@ def take_break(minutes: hug.types.number=5):
     lose()
     print("")
     print("######################################### TAKING A BREAK ####################################")
-    for remaining in range(minutes * 60, -1, -1):
-        sys.stdout.write("\r")
-        sys.stdout.write("{:2d} seconds remaining without concentration.".format(remaining))
-        sys.stdout.flush()
-        time.sleep(1)
-
-    sys.stdout.write("\rEnough distraction!                                                            ")
-    print("######################################### BREAK OVER :) ####################################")
-    print("")
-    improve()
+    try:
+        for remaining in range(minutes * 60, -1, -1):
+            sys.stdout.write("\r")
+            sys.stdout.write("{:2d} seconds remaining without concentration.".format(remaining))
+            sys.stdout.flush()
+            time.sleep(1)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        sys.stdout.write("\rEnough distraction!                                                            ")
+        print("######################################### BREAK OVER :) ####################################")
+        print("")
+        improve()
 
 
 @hug.cli()

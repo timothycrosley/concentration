@@ -9,7 +9,7 @@ import sys
 import time
 import hug
 
-from . import settings
+from . import output, settings
 
 
 def reset_network(message):
@@ -66,7 +66,7 @@ def take_break(minutes: hug.types.number=5):
     """Enables temporarily breaking concentration"""
     lose()
     print("")
-    print("######################################### TAKING A BREAK ####################################")
+    print(output.banner(" TAKING A BREAK "))
     for remaining in range(minutes * 60, -1, -1):
         sys.stdout.write("\r")
         sys.stdout.write("{:2d} seconds remaining without concentration.".format(remaining))
@@ -74,7 +74,8 @@ def take_break(minutes: hug.types.number=5):
         time.sleep(1)
 
     sys.stdout.write("\rEnough distraction!                                                            ")
-    print("######################################### BREAK OVER :) ####################################")
+    print("")
+    print(output.banner(" BREAK OVER :) "))
     print("")
     improve()
 

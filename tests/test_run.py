@@ -23,6 +23,6 @@ from concentration import run, settings
 
 
 def test_settings():
-    assert settings.PLATFORM in (settings.LINUX, settings.MAC, settings.WINDOWS)
+    assert settings.PLATFORM in (settings.OS.linux, settings.OS.mac, settings.OS.windows)
     assert settings.HOSTS_FILE and isinstance(settings.HOSTS_FILE, str)
-    assert settings.DISTRACTORS and isinstance(settings.DISTRACTORS, (list, tuple))
+    assert settings.DISTRACTORS and isinstance(settings.DISTRACTORS, (list, tuple, set))

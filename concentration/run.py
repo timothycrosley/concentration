@@ -9,7 +9,7 @@ import sys
 import time
 import hug
 
-from . import settings
+from . import output, settings
 
 
 def reset_network(message):

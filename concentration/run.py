@@ -64,19 +64,37 @@ def lose():
 @hug.cli('break')
 def take_break(minutes: hug.types.number=5):
     """Enables temporarily breaking concentration"""
+    print("")
+    print("######################################### ARE YOU SURE? #####################################")
+    try:
+        for remaining in range(60, -1, -1):
+            sys.stdout.write("\r")
+            sys.stdout.write("{:2d} seconds to change your mind. Won't you prefer programming? Or a book?".format(remaining))
+            sys.stdout.flush()
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("")
+        print("")
+        print(":D :D :D\nGood on you! <3")
+        return
+
+    # The user insisted on breaking concentration.
     lose()
     print("")
     print("######################################### TAKING A BREAK ####################################")
-    for remaining in range(minutes * 60, -1, -1):
-        sys.stdout.write("\r")
-        sys.stdout.write("{:2d} seconds remaining without concentration.".format(remaining))
-        sys.stdout.flush()
-        time.sleep(1)
-
-    sys.stdout.write("\rEnough distraction!                                                            ")
-    print("######################################### BREAK OVER :) ####################################")
-    print("")
-    improve()
+    try:
+        for remaining in range(minutes * 60, -1, -1):
+            sys.stdout.write("\r")
+            sys.stdout.write("{:2d} seconds remaining without concentration.".format(remaining))
+            sys.stdout.flush()
+            time.sleep(1)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        sys.stdout.write("\rEnough distraction!                                                            \n")
+        print("######################################### BREAK OVER :) #####################################")
+        print("")
+        improve()
 
 
 @hug.cli()

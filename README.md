@@ -4,7 +4,8 @@ Concentration
 
 Stay focused on work when you want, and goof off when you don't. Concentration is a simple
 Python 3 console utility to block distracting sites when you need to focus, while allowing you to easily
-take timed breaks. Internally uses /etc/hosts file as the mechanism to block sites.
+take timed breaks. Concentration uses the /etc/hosts file as the mechanism to
+block sites, and works on Linux, Macintosh, and Windows.
 
 ![Concentration Example](https://raw.github.com/timothycrosley/concentration/develop/example.gif)
 
@@ -33,7 +34,9 @@ To take a long 60 minute timed break:
 
     sudo concentration break -m 60
 
-To access all sites:
+You can cancel breaks with `Ctrl-C`.
+
+To disable blocking until you explicitly enable it again:
 
     sudo concentration lose
 

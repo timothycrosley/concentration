@@ -28,7 +28,7 @@ def improve():
     """Disables access to websites that are defined as 'distractors'"""
     with open(settings.HOSTS_FILE, "r+") as hosts_file:
         contents = hosts_file.read()
-        if not settings.START_TOKEN in contents and not settings.END_TOKEN in contents:
+        if settings.START_TOKEN not in contents and not settings.END_TOKEN in contents:
             hosts_file.write(settings.START_TOKEN + "\n")
             for site in set(settings.DISTRACTORS):
                 hosts_file.write("{0}\t{1}\n".format(settings.REDIRECT_TO, site))

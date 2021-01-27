@@ -18,7 +18,7 @@ def reset_network(message):
     for command in settings.RESTART_NETWORK:
         try:
             subprocess.check_call(command)
-        except:
+        except Exception:
             pass
     print(message)
 

@@ -1,9 +1,0 @@
--r common.txt
-pytest>=3.0.0
-pytest-cov>=2.0.0
-tox
-isort
-Cython
-ipython
-wheel
-python-coveralls

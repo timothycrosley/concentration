@@ -8,6 +8,7 @@
 *.egg-info
 build
 eggs
+.eggs
 parts
 var
 sdist
@@ -28,6 +29,8 @@ pip-selfcheck.json
 nosetests.xml
 htmlcov
 .cache
+.pytest_cache
+.mypy_cache
 
 # Translations
 *.mo
@@ -58,10 +61,28 @@ atlassian-ide-plugin.xml
 .ropeproject/
 
 # Python3 Venv Files
+.venv/
 bin/
 include/
 lib/
 lib64
 pyvenv.cfg
 share/
+venv/
+.python-version
+
+# Cython
+*.c
+
+# Emacs backup
+*~
+
+# VSCode
+/.vscode
+
+# Automatically generated files
+docs/preconvert
+site/
+out
+poetry.lock
 

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "concentration"
+version = "1.1.2"
+description = "Get work done when you need to, goof off when you don't."
+authors = ["Timothy Crosley <timothy.crosley@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+hug = "^2.6.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.2"
+pytest-cov = "^2.11.1"
+isort = "^5.7.0"
+black = "^20.8b1"
+python-coveralls = "^2.9.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

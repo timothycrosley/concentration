@@ -7,4 +7,4 @@ import shutil
 
 def banner(txt):
     width, _ = shutil.get_terminal_size()
-    return txt.center(width, '#')
+    return txt.center(width, "#")

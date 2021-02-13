@@ -7,6 +7,7 @@ import codecs
 import subprocess
 import sys
 import time
+
 import hug
 
 from . import output, settings
@@ -32,7 +33,9 @@ def improve():
             for site in set(settings.DISTRACTORS):
                 hosts_file.write("{0}\t{1}\n".format(settings.REDIRECT_TO, site))
                 for sub_domain in settings.SUB_DOMAINS:
-                    hosts_file.write("{0}\t{1}.{2}\n".format(settings.REDIRECT_TO, sub_domain, site))
+                    hosts_file.write(
+                        "{0}\t{1}.{2}\n".format(settings.REDIRECT_TO, sub_domain, site)
+                    )
             hosts_file.write(settings.END_TOKEN + "\n")
 
     reset_network("Concentration is now improved :D!")
@@ -61,15 +64,21 @@ def lose():
     reset_network("Concentration is now lost :(.")
 
 
-@hug.cli('break')
-def take_break(minutes: hug.types.number=5):
+@hug.cli("break")
+def take_break(minutes: hug.types.number = 5):
     """Enables temporarily breaking concentration"""
     print("")
-    print("######################################### ARE YOU SURE? #####################################")
+    print(
+        "######################################### ARE YOU SURE? #####################################"
+    )
     try:
         for remaining in range(60, -1, -1):
             sys.stdout.write("\r")
-            sys.stdout.write("{:2d} seconds to change your mind. Won't you prefer programming? Or a book?".format(remaining))
+            sys.stdout.write(
+                "{:2d} seconds to change your mind. Won't you prefer programming? Or a book?".format(
+                    remaining
+                )
+            )
             sys.stdout.flush()
             time.sleep(1)
     except KeyboardInterrupt:
@@ -81,7 +90,9 @@ def take_break(minutes: hug.types.number=5):
     # The user insisted on breaking concentration.
     lose()
     print("")
-    print("######################################### TAKING A BREAK ####################################")
+    print(
+        "######################################### TAKING A BREAK ####################################"
+    )
     try:
         for remaining in range(minutes * 60, -1, -1):
             sys.stdout.write("\r")
@@ -91,8 +102,12 @@ def take_break(minutes: hug.types.number=5):
     except KeyboardInterrupt:
         pass
     finally:
-        sys.stdout.write("\rEnough distraction!                                                            \n")
-        print("######################################### BREAK OVER :) #####################################")
+        sys.stdout.write(
+            "\rEnough distraction!                                                            \n"
+        )
+        print(
+            "######################################### BREAK OVER :) #####################################"
+        )
         print("")
         improve()
 
@@ -103,7 +118,7 @@ def blocked():
     return settings.DISTRACTORS
 
 
-@hug.cli('64')
+@hug.cli("64")
 def game():
     """Basic game implementation"""
-    print(codecs.encode('Sbe Nznaqn, gur ybir bs zl yvsr', 'rot_13'))
+    print(codecs.encode("Sbe Nznaqn, gur ybir bs zl yvsr", "rot_13"))

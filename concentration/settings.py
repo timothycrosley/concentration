@@ -9,8 +9,8 @@ from enum import Enum
 OS = Enum("OS", "linux mac windows")
 HOSTS_FILE = "/etc/hosts"
 REDIRECT_TO = "127.0.0.1"
-START_TOKEN = "## START DISTRACTORS ##"
-END_TOKEN = "## END DISTRACTORS ##"
+START_TOKEN = "## START DISTRACTORS ##"  # nosec - not password
+END_TOKEN = "## END DISTRACTORS ##"  # nosec - not password
 SUB_DOMAINS = ("www", "news")
 DISTRACTORS = {
     "ycombinator.com",

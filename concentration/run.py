@@ -4,7 +4,7 @@
 A very simple command line application to maintain focus by blocking distracting sites.
 """
 import codecs
-import subprocess
+import subprocess  # nosec
 import sys
 import time
 
@@ -17,8 +17,8 @@ def reset_network(message):
     """Resets the users network to make changes take effect"""
     for command in settings.RESTART_NETWORK:
         try:
-            subprocess.check_call(command)
-        except Exception:
+            subprocess.check_call(command)  # nosec
+        except Exception:  # nosec
             pass
     print(message)
 

@@ -12,6 +12,8 @@ import hug
 
 from . import output, settings
 
+BANNER = f"{'#' * 20} {{}} {'#' * 20}"
+
 
 def reset_network(message):
     """Resets the users network to make changes take effect"""
@@ -68,17 +70,12 @@ def lose():
 def take_break(minutes: hug.types.number = 5):
     """Enables temporarily breaking concentration"""
     print("")
-    print(
-        "######################################### ARE YOU SURE? #####################################"
-    )
+    print(BANNER.format("ARE YOU SURE?"))
     try:
         for remaining in range(60, -1, -1):
             sys.stdout.write("\r")
-            sys.stdout.write(
-                "{:2d} seconds to change your mind. Won't you prefer programming? Or a book?".format(
-                    remaining
-                )
-            )
+            sys.stdout.write("{:2d} seconds to change your mind. ".format(remaining))
+            sys.stdout.write("Won't you prefer programming? Or a book?")
             sys.stdout.flush()
             time.sleep(1)
     except KeyboardInterrupt:
@@ -90,9 +87,7 @@ def take_break(minutes: hug.types.number = 5):
     # The user insisted on breaking concentration.
     lose()
     print("")
-    print(
-        "######################################### TAKING A BREAK ####################################"
-    )
+    print(BANNER.format("TAKING A BREAK"))
     try:
         for remaining in range(minutes * 60, -1, -1):
             sys.stdout.write("\r")
@@ -105,9 +100,7 @@ def take_break(minutes: hug.types.number = 5):
         sys.stdout.write(
             "\rEnough distraction!                                                            \n"
         )
-        print(
-            "######################################### BREAK OVER :) #####################################"
-        )
+        print(BANNER.format("BREAK OVER :)"))
         print("")
         improve()
 

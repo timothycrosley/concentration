@@ -108,13 +108,11 @@ DISTRACTORS = {
     "bbc.com",
     "notalwaysright.com",
 }
-CONFIG_DIRS = {
-    "/etc",
-    os.path.expanduser("~"),
-    os.path.expanduser(f"~{os.getlogin()}"),
-}
+CONFIG_DIRS = {"/etc", os.path.expanduser("~"), os.path.expanduser(f"~{os.getlogin()}")}
 
-for distractor_config in (os.path.join(config_dir, "concentration.distractors") for config_dir in CONFIG_DIRS):
+for distractor_config in (
+    os.path.join(config_dir, "concentration.distractors") for config_dir in CONFIG_DIRS
+):
     if os.path.isfile(distractor_config):
         with open(distractor_config) as distractor_config_file:
             DISTRACTORS.update(distractor_config_file.read().splitlines())

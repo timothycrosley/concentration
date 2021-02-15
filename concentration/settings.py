@@ -108,19 +108,22 @@ DISTRACTORS = {
     "bbc.com",
     "notalwaysright.com",
 }
+CONFIG_DIRS = {
+    "/etc",
+    os.path.expanduser("~"),
+    os.path.join(os.path.expanduser(f"~{os.getlogin()}"),
+}
 
-for config_file_path in (
-    "/etc/concentration.distractors",
-    os.path.expanduser("~/.concentration.distractors"),
-):
-    if os.path.isfile(config_file_path):
-        with open(config_file_path) as config_file:
-            DISTRACTORS.update(config_file.read().splitlines())
-for config_file_path in ("/etc/concentration.safe", os.path.expanduser("~/.concentration.safe")):
-    if os.path.isfile(config_file_path):
-        with open(config_file_path) as config_file:
+for distractor_config in (os.path.join(config_dir, "concentration.distractors") for config_dir in CONFIG_DIRS):
+    if os.path.isfile(distractor_config):
+        with open(distractor_config) as distractor_config_file:
+            DISTRACTORS.update(distractor_config_file.read().splitlines())
+
+for safe_config in (os.path.join(config_dir, "concentration.safe") for config_dir in CONFIG_DIRS):
+    if os.path.isfile(safe_config):
+        with open(safe_config) as safe_config_file:
             DISTRACTORS.difference_update(
-                config_file.read().splitlines()
+                safe_config_file.read().splitlines()
             )  # Remove all white listed domains
 
 DISTRACTORS.discard("")

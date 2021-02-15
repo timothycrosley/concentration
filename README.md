@@ -1,6 +1,17 @@
 Concentration
 ============================
-[![Join the chat at https://gitter.im/timothycrosley/concentration](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/timothycrosley/concentration?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![PyPI version](https://badge.fury.io/py/concentration.svg)](http://badge.fury.io/py/concentration)
+[![Test Status](https://github.com/timothycrosley/concentration/workflows/Test/badge.svg?branch=develop)](https://github.com/timothycrosley/concentration/actions?query=workflow%3ATest)
+[![Lint Status](https://github.com/timothycrosley/concentration/workflows/Lint/badge.svg?branch=develop)](https://github.com/timothycrosley/concentration/actions?query=workflow%3ALint)
+[![codecov](https://codecov.io/gh/timothycrosley/concentration/branch/master/graph/badge.svg)](https://codecov.io/gh/timothycrosley/concentration)
+[![Join the chat at https://gitter.im/timothycrosley/concentration](https://badges.gitter.im/timothycrosley/concentration.svg)](https://gitter.im/timothycrosley/concentration?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.python.org/pypi/concentration/)
+[![Downloads](https://pepy.tech/badge/concentration)](https://pepy.tech/project/concentration)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://timothycrosley.github.io/isort/)
+_________________
+
+[Read Latest Documentation](https://timothycrosley.github.io/concentration/) - [Browse GitHub Code Repository](https://github.com/timothycrosley/concentration/)
 
 Stay focused on work when you want, and goof off when you don't. Concentration is a simple
 Python 3 console utility to block distracting sites when you need to focus, while allowing you to easily

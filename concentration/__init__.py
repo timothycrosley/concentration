@@ -2,4 +2,4 @@
 
 A tool to make it easy to block sites that cause distraction
 """
-__version__ = "1.1.2"
+__version__ = "1.1.3"

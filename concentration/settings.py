@@ -111,7 +111,7 @@ DISTRACTORS = {
 CONFIG_DIRS = {
     "/etc",
     os.path.expanduser("~"),
-    os.path.join(os.path.expanduser(f"~{os.getlogin()}"),
+    os.path.expanduser(f"~{os.getlogin()}"),
 }
 
 for distractor_config in (os.path.join(config_dir, "concentration.distractors") for config_dir in CONFIG_DIRS):

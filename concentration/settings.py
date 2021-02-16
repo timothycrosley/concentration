@@ -108,7 +108,11 @@ DISTRACTORS = {
     "bbc.com",
     "notalwaysright.com",
 }
-CONFIG_DIRS = {"/etc", os.path.expanduser("~"), os.path.expanduser(f"~{os.getlogin()}")}
+
+try:
+    CONFIG_DIRS = {"/etc", os.path.expanduser("~"), os.path.expanduser(f"~{os.getlogin()}")}
+except OSError:
+    CONFIG_DIRS = {"/etc", os.path.expanduser("~")}
 
 for distractor_config in (
     os.path.join(config_dir, "concentration.distractors") for config_dir in CONFIG_DIRS

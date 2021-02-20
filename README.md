@@ -26,8 +26,13 @@ Installing Concentration
 
     pip3 install concentration
 
-    # Or if pip is already set to use Python 3
+Or, if pip is already set to use Python 3
+
     pip install concentration
+
+Or, if you wanted concentration installed and ran in an isolated environment, consider using [pipx](https://github.com/pipxproject/pipx):
+
+    pipx run concentration
 
 
 Using Concentration

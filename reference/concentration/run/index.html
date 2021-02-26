@@ -750,7 +750,9 @@
 <span class="normal">190</span>
 <span class="normal">191</span>
 <span class="normal">192</span>
-<span class="normal">193</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
 
 <span class="sd">&quot;&quot;&quot;Concentration</span>
 
@@ -858,37 +860,39 @@
 
 <span class="nd">@hug</span><span class="o">.</span><span class="n">cli</span><span class="p">(</span><span class="s2">&quot;break&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">take_break</span><span class="p">(</span><span class="n">minutes</span><span class="p">:</span> <span class="n">hug</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">take_break</span><span class="p">(</span><span class="n">minutes</span><span class="p">:</span> <span class="n">hug</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">now</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;Enables temporarily breaking concentration&quot;&quot;&quot;</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">banner</span><span class="p">(</span><span class="s2">&quot;ARE YOU SURE?&quot;</span><span class="p">))</span>
-
-    <span class="k">try</span><span class="p">:</span>
-
-        <span class="k">for</span> <span class="n">remaining</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-
-            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:2d}</span><span class="s2"> seconds to change your mind. &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">remaining</span><span class="p">))</span>
-
-            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Won&#39;t you prefer programming? Or a book?&quot;</span><span class="p">)</span>
-
-            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">now</span><span class="p">:</span>
 
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">banner</span><span class="p">(</span><span class="s2">&quot;ARE YOU SURE?&quot;</span><span class="p">))</span>
 
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:D :D :D</span><span class="se">\n</span><span class="s2">Good on you! &lt;3&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
 
-        <span class="k">return</span>
+            <span class="k">for</span> <span class="n">remaining</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+
+                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:2d}</span><span class="s2"> seconds to change your mind. &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">remaining</span><span class="p">))</span>
+
+                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Won&#39;t you prefer programming? Or a book?&quot;</span><span class="p">)</span>
+
+                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:D :D :D</span><span class="se">\n</span><span class="s2">Good on you! &lt;3&quot;</span><span class="p">)</span>
+
+            <span class="k">return</span>
 
     <span class="c1"># The user insisted on breaking concentration.</span>
 
@@ -1096,44 +1100,47 @@
 </details>
 <h3 id="take_break">take_break</h3>
 <div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">take_break</span><span class="p">(</span>
-    <span class="n">minutes</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">hug</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">create</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.</span><span class="n">new_type_handler</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.</span><span class="n">NewType</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f90179a3730</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">minutes</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">hug</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">create</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.</span><span class="n">new_type_handler</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.</span><span class="n">NewType</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f8cfc735730</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">now</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="p">)</span>
 </code></pre></div>
 
 <p>Enables temporarily breaking concentration</p>
 <details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="nv">@hug</span><span class="p">.</span><span class="n">cli</span><span class="p">(</span><span class="ss">&quot;break&quot;</span><span class="p">)</span><span class="w"></span>
 
-<span class="n">def</span><span class="w"> </span><span class="n">take_break</span><span class="p">(</span><span class="nl">minutes</span><span class="p">:</span><span class="w"> </span><span class="n">hug</span><span class="p">.</span><span class="n">types</span><span class="p">.</span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="n">def</span><span class="w"> </span><span class="n">take_break</span><span class="p">(</span><span class="nl">minutes</span><span class="p">:</span><span class="w"> </span><span class="n">hug</span><span class="p">.</span><span class="n">types</span><span class="p">.</span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="nl">now</span><span class="p">:</span><span class="w"> </span><span class="n">bool</span><span class="o">=</span><span class="k">False</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
 
 <span class="w">    </span><span class="ss">&quot;&quot;&quot;Enables temporarily breaking concentration&quot;&quot;&quot;</span><span class="w"></span>
 
-<span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="ss">&quot;&quot;</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="k">output</span><span class="p">.</span><span class="n">banner</span><span class="p">(</span><span class="ss">&quot;ARE YOU SURE?&quot;</span><span class="p">))</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">try</span><span class="err">:</span><span class="w"></span>
-
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">remaining</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="k">range</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-
-<span class="w">            </span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="ss">&quot;\r&quot;</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">            </span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="ss">&quot;{:2d} seconds to change your mind. &quot;</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">remaining</span><span class="p">))</span><span class="w"></span>
-
-<span class="w">            </span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="ss">&quot;Won&#39;t you prefer programming? Or a book?&quot;</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">            </span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="n">flush</span><span class="p">()</span><span class="w"></span>
-
-<span class="w">            </span><span class="nc">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">    </span><span class="ow">except</span><span class="w"> </span><span class="nl">KeyboardInterrupt</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nl">now</span><span class="p">:</span><span class="w"></span>
 
 <span class="w">        </span><span class="k">print</span><span class="p">(</span><span class="ss">&quot;&quot;</span><span class="p">)</span><span class="w"></span>
 
-<span class="w">        </span><span class="k">print</span><span class="p">(</span><span class="ss">&quot;&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">print</span><span class="p">(</span><span class="k">output</span><span class="p">.</span><span class="n">banner</span><span class="p">(</span><span class="ss">&quot;ARE YOU SURE?&quot;</span><span class="p">))</span><span class="w"></span>
 
-<span class="w">        </span><span class="k">print</span><span class="p">(</span><span class="ss">&quot;:D :D :D\nGood on you! &lt;3&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="err">:</span><span class="w"></span>
 
-<span class="w">        </span><span class="k">return</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="n">remaining</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="k">range</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="ss">&quot;\r&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="ss">&quot;{:2d} seconds to change your mind. &quot;</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">remaining</span><span class="p">))</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="ss">&quot;Won&#39;t you prefer programming? Or a book?&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="n">flush</span><span class="p">()</span><span class="w"></span>
+
+<span class="w">                </span><span class="nc">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="ow">except</span><span class="w"> </span><span class="nl">KeyboardInterrupt</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">print</span><span class="p">(</span><span class="ss">&quot;&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">print</span><span class="p">(</span><span class="ss">&quot;&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">print</span><span class="p">(</span><span class="ss">&quot;:D :D :D\nGood on you! &lt;3&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"></span>
 
 <span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">insisted</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">breaking</span><span class="w"> </span><span class="n">concentration</span><span class="p">.</span><span class="w"></span>
 

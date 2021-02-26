@@ -65,22 +65,23 @@ def lose():
 
 
 @hug.cli("break")
-def take_break(minutes: hug.types.number = 5):
+def take_break(minutes: hug.types.number = 5, now: bool=False):
     """Enables temporarily breaking concentration"""
-    print("")
-    print(output.banner("ARE YOU SURE?"))
-    try:
-        for remaining in range(60, -1, -1):
-            sys.stdout.write("\r")
-            sys.stdout.write("{:2d} seconds to change your mind. ".format(remaining))
-            sys.stdout.write("Won't you prefer programming? Or a book?")
-            sys.stdout.flush()
-            time.sleep(1)
-    except KeyboardInterrupt:
+    if not now:
         print("")
-        print("")
-        print(":D :D :D\nGood on you! <3")
-        return
+        print(output.banner("ARE YOU SURE?"))
+        try:
+            for remaining in range(60, -1, -1):
+                sys.stdout.write("\r")
+                sys.stdout.write("{:2d} seconds to change your mind. ".format(remaining))
+                sys.stdout.write("Won't you prefer programming? Or a book?")
+                sys.stdout.flush()
+                time.sleep(1)
+        except KeyboardInterrupt:
+            print("")
+            print("")
+            print(":D :D :D\nGood on you! <3")
+            return
 
     # The user insisted on breaking concentration.
     lose()

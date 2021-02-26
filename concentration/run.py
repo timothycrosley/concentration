@@ -65,7 +65,7 @@ def lose():
 
 
 @hug.cli("break")
-def take_break(minutes: hug.types.number = 5, now: bool=False):
+def take_break(minutes: hug.types.number = 5, now: bool = False):
     """Enables temporarily breaking concentration"""
     if not now:
         print("")

@@ -69,6 +69,13 @@ You can make sure sites are visible even if concentration is enabled by putting 
 - ~/.concentration.safe
 - /etc/concentration.safe
 
+
+Articles featuring Concentration
+===============================
+
+- https://www.turtle-techies.com/useful-linux-unix-tools-to-add-to-your-toolbox/#peace-and-concentration
+- https://opensource.com/article/20/8/python-concentration
+
 --------------------------------------------
 
 Thanks and I hope you find concentration useful in your effort to get more done!

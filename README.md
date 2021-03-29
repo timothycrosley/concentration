@@ -1,9 +1,9 @@
 Concentration
 ============================
 [![PyPI version](https://badge.fury.io/py/concentration.svg)](http://badge.fury.io/py/concentration)
-[![Test Status](https://github.com/timothycrosley/concentration/workflows/Test/badge.svg?branch=develop)](https://github.com/timothycrosley/concentration/actions?query=workflow%3ATest)
-[![Lint Status](https://github.com/timothycrosley/concentration/workflows/Lint/badge.svg?branch=develop)](https://github.com/timothycrosley/concentration/actions?query=workflow%3ALint)
-[![codecov](https://codecov.io/gh/timothycrosley/concentration/branch/master/graph/badge.svg)](https://codecov.io/gh/timothycrosley/concentration)
+[![Test Status](https://github.com/timothycrosley/concentration/workflows/Test/badge.svg?branch=main)](https://github.com/timothycrosley/concentration/actions?query=workflow%3ATest)
+[![Lint Status](https://github.com/timothycrosley/concentration/workflows/Lint/badge.svg?branch=main)](https://github.com/timothycrosley/concentration/actions?query=workflow%3ALint)
+[![codecov](https://codecov.io/gh/timothycrosley/concentration/branch/main/graph/badge.svg)](https://codecov.io/gh/timothycrosley/concentration)
 [![Join the chat at https://gitter.im/timothycrosley/concentration](https://badges.gitter.im/timothycrosley/concentration.svg)](https://gitter.im/timothycrosley/concentration?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.python.org/pypi/concentration/)
 [![Downloads](https://pepy.tech/badge/concentration)](https://pepy.tech/project/concentration)
@@ -18,7 +18,7 @@ Python 3 console utility to block distracting sites when you need to focus, whil
 take timed breaks. Concentration uses the /etc/hosts file as the mechanism to
 block sites, and works on Linux, Macintosh, and Windows.
 
-![Concentration Example](https://raw.github.com/timothycrosley/concentration/develop/example.gif)
+![Concentration Example](https://raw.github.com/timothycrosley/concentration/main/example.gif)
 
 
 Installing Concentration

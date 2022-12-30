@@ -84,5 +84,3 @@ venv/
 docs/preconvert
 site/
 out
-poetry.lock
-
